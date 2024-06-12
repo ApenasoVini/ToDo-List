@@ -1,53 +1,86 @@
-@keyframes slideIn {
-  0% {
-    transform: translateY(50px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+$blue: #0051FF;
+$black: #252729;
+$white: #F2F2F2;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  font-family: Arial, sans-serif;
-  background: linear-gradient(to right, #ff6e7f, #bfe9ff);
-  min-height: 100vh;
+  font-family: 'Montserrat', sans-serif;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100%;
+  background-color: $black;
+  color: $white;
 }
 
-.container {
-  background-color: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  animation: slideIn 0.5s ease forwards;
-}
+.Container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 30px;
+  padding: 15px;
+  width: 25vw;
+  min-height: 65vh;
+  background-color: $blue;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.35) 10px 10px 20px;
 
-h1 {
-  text-align: center;
-}
+  h1 {
+    font-size: 1.5rem;
+  }
 
-ul {
-  list-style-type: none;
-  padding: 0;
-}
+  form {
+    width: 100%;
+    min-height: auto;
+    justify-content: center;
+    display: flex;
+    gap: 5px;
 
-li {
-  margin-bottom: 10px;
-}
+    input,
+    button {
+      border-radius: 5px;
+      border: 0;
+      padding: 8px;
+    }
 
-button {
-  background-color: #ff6e7f;
-  color: white;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 5px;
-  cursor: pointer;
-}
+    button {
+      background-color: $black;
+      color: $white;
+    }
+  }
 
-button:hover {
-  background-color: #ff4d5a;
+  ol {
+    display: flex;
+    flex-direction: column;
+    max-width: 25vw;
+    gap: 20px;
+
+    li {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+
+      input {
+        width: 1.25rem;
+        height: 1.25rem;
+      }
+
+      button {
+        border-radius: 5px;
+        border: 0;
+        padding: 8px;
+        background-color: $black;
+        color: $white;
+      }
+    }
+  }
 }

@@ -27,24 +27,37 @@ const List: React.FC = () => {
   };
 
   return (
-    <div>
+    <div className='Container'>
       <h1>Lista de Tarefas</h1>
-      <ul>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          addTask();
+        }}
+      >
+        <input
+          type='text'
+          value={newTaskTitle}
+          onChange={(e) => setNewTaskTitle(e.target.value)}
+          placeholder='Nome da Tarefa'
+        />
+        <button type='submit'>Adicionar</button>
+      </form>
+      <ol>
         {tasks.map((task) => (
           <li key={task.id}>
-            <input type="checkbox" checked={task.completed} onChange={() => toggleTaskCompletion(task.id)} />
+            <input
+              type='checkbox'
+              checked={task.completed}
+              onChange={() => toggleTaskCompletion(task.id)}
+            />
+
             <span style={{ textDecoration: task.completed ? 'line-through' : 'none' }}>{task.title}</span>
+
             <button onClick={() => deleteTask(task.id)}>Excluir</button>
           </li>
         ))}
-      </ul>
-      <form onSubmit={(e) => {
-        e.preventDefault();
-        addTask();
-      }}>
-        <input type="text" value={newTaskTitle} onChange={(e) => setNewTaskTitle(e.target.value)} placeholder="Adicionar tarefa" />
-        <button type="submit">Adicionar</button>
-      </form>
+      </ol>
     </div>
   );
 };
