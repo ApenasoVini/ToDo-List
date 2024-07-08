@@ -14,7 +14,7 @@ function App() {
       </main>
 
       <section>
-        <h1>todo list</h1>
+        <h1>to-do list</h1>
         <div>
           <img src={reactnative} alt="react native" />
           <img src={typescript} alt="typescript" />

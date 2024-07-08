@@ -8,22 +8,33 @@ export default function List() {
   };
 
   return (
-    <div className='List'>
-      <ul>
-        <li>
-          <p
-            onClick={endActivity}
-            style={{ textDecoration: finished ? 'line-through' : 'none' }}
-          >
-            Aaaa
-          </p>
-          <button>
-            <span className="material-symbols-outlined">
-              delete
-            </span>
-          </button>
-        </li>
-      </ul>
-    </div>
+    <ul className='List'>
+      <li>
+        <p
+          onClick={endActivity}
+          style={{ textDecoration: finished ? 'line-through' : 'none' }}
+        >
+          Aaaa
+        </p>
+        <button>
+          <span className="material-symbols-outlined">
+            delete
+          </span>
+        </button>
+      </li>
+      <li>
+        <p
+          onClick={endActivity}
+          style={{ textDecoration: finished ? 'line-through' : 'none' }}
+        >
+          Bbbb
+        </p>
+        <button>
+          <span className="material-symbols-outlined">
+            delete
+          </span>
+        </button>
+      </li>
+    </ul>
   );
 }
