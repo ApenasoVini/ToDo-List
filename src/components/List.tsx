@@ -1,65 +1,10 @@
 import React, { useState } from 'react';
 
-interface Task {
-  id: number;
-  title: string;
-  completed: boolean;
-}
-
-const List: React.FC = () => {
-  const [tasks, setTasks] = useState<Task[]>([]);
-  const [newTaskTitle, setNewTaskTitle] = useState<string>('');
-
-  const addTask = () => {
-    if (!newTaskTitle.trim()) return;
-
-    const newTask: Task = { id: Date.now(), title: newTaskTitle, completed: false };
-    setTasks([...tasks, newTask]);
-    setNewTaskTitle('');
-  };
-
-  const toggleTaskCompletion = (id: number) => {
-    setTasks(tasks.map((task) => (task.id === id ? { ...task, completed: !task.completed } : task)));
-  };
-
-  const deleteTask = (id: number) => {
-    setTasks(tasks.filter((task) => task.id !== id));
-  };
-
+export default function List(){
   return (
-    <div className='Container'>
-      <h1>Lista de Tarefas</h1>
-      <form
-        onSubmit={(e) => {
-          e.preventDefault();
-          addTask();
-        }}
-      >
-        <input
-          type='text'
-          value={newTaskTitle}
-          onChange={(e) => setNewTaskTitle(e.target.value)}
-          placeholder='Nome da Tarefa'
-        />
-        <button type='submit'>Adicionar</button>
-      </form>
-      <ol>
-        {tasks.map((task) => (
-          <li key={task.id}>
-            <input
-              type='checkbox'
-              checked={task.completed}
-              onChange={() => toggleTaskCompletion(task.id)}
-            />
-
-            <span style={{ textDecoration: task.completed ? 'line-through' : 'none' }}>{task.title}</span>
-
-            <button onClick={() => deleteTask(task.id)}>Excluir</button>
-          </li>
-        ))}
-      </ol>
-    </div>
+      <div>
+        
+      </div>
   );
 };
 
-export default List;
