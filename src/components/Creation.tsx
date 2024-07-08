@@ -1,7 +1,8 @@
 export default function Creation() {
+
     return (
         <div className='Creation'>
-            <input type="text" placeholder='Escreva sua tarefa...' />
+            <input id='task' type="text" placeholder='Escreva sua tarefa...' />
             <button type='button'>
                 <span className="material-symbols-outlined">
                     add
@@ -10,8 +11,3 @@ export default function Creation() {
         </div>
     );
 };
-
-//ICON TRASH
-//<span className="material-symbols-outlined">
-//delete
-//</span> 

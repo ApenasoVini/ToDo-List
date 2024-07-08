@@ -17,6 +17,11 @@ export default function List() {
           >
             Aaaa
           </p>
+          <button>
+            <span className="material-symbols-outlined">
+              delete
+            </span>
+          </button>
         </li>
       </ul>
     </div>
