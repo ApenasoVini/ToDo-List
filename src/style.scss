@@ -25,36 +25,70 @@ body {
     justify-content: center;
     gap: 5rem;
 
-    .Creation {
-      background-color: $white;
+    main {
       display: flex;
-      flex-direction: row;
-      padding: 5%;
-      height: 15vh;
-      width: 22rem;
-      align-items: center;
-      border-radius: 15px;
-      gap: 0.5rem;
-      box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
+      flex-direction: column;
+      gap: 3rem;
 
-      input {
-        width: 20vw;
-        height: 6vh;
-        padding: 1%;
-        border: 0;
-        outline: none;
+      .Creation {
+        background-color: $white;
+        display: flex;
+        flex-direction: row;
+        padding: 5%;
+        height: 15vh;
+        width: 22rem;
+        align-items: center;
+        border-radius: 15px;
+        gap: 0.5rem;
+        box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
+
+        input {
+          width: 20vw;
+          height: 6vh;
+          background-color: $white;
+          padding: 1%;
+          border: 0;
+          outline: none;
+        }
+
+        button {
+          height: 3rem;
+          width: 4.5rem;
+          background-color: $darkPurple;
+          color: $white;
+          border: 0;
+          border-radius: 50%;
+          align-items: center;
+          cursor: pointer;
+          display: flex;
+          justify-content: center;
+        }
+      }
+    }
+
+    section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      h1 {
+        color: $white;
+        font-size: 5rem;
+        text-transform: uppercase;
       }
 
-      button {
-        height: 2.5rem;
-        width: 2.5rem;
-        background-color: $darkPurple;
-        color: $white;
-        border: 0;
-        border-radius: 50%;
-        align-items: center;
+      div {
         display: flex;
-        justify-content: center;
+        flex-direction: row;
+        gap: 1rem;
+        background-color: $white;
+        width: min-content;
+        padding: 2%;
+        border-radius: 15px;
+
+        img {
+          width: 3rem;
+        }
       }
     }
   }

@@ -1,11 +1,9 @@
-import React, { useState } from 'react';
-
 export default function Creation() {
     return (
         <div className='Creation'>
             <input type="text" placeholder='Escreva sua tarefa...' />
-            <button type='button'>  
-                <span class="material-symbols-outlined">
+            <button type='button'>
+                <span className="material-symbols-outlined">
                     add
                 </span>
             </button>
@@ -13,8 +11,7 @@ export default function Creation() {
     );
 };
 
-
 //ICON TRASH
-{/* <span class="material-symbols-outlined">
-delete
-</span> */}
+//<span className="material-symbols-outlined">
+//delete
+//</span> 
