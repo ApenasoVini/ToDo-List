@@ -6,6 +6,29 @@ $pink: #A667F2;
 $black: #252729;
 $white: #F2F2F2;
 
+@mixin flex-center($direction: row, $justify: center, $align: center, $gap: 0) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+}
+
+@mixin box-shadow($color: rgba(0, 0, 0, 0.5), $offset-x: 0, $offset-y: 5px, $blur-radius: 30px) {
+  box-shadow: $offset-x $offset-y $blur-radius $color;
+}
+
+@mixin button-styles($bg-color: $darkPurple, $text-color: $white, $padding: 3%) {
+  background-color: $bg-color;
+  color: $text-color;
+  border: 0;
+  cursor: pointer;
+  padding: $padding;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -20,27 +43,19 @@ body {
   background: linear-gradient(to right, $purple, $pink);
 
   .App {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 5rem;
+    @include flex-center(row, center, center, 5rem);
 
     main {
-      display: flex;
-      flex-direction: column;
-      gap: 3rem;
+      @include flex-center(column, flex-start, flex-start, 3rem);
 
       .Creation {
         background-color: $white;
-        display: flex;
-        flex-direction: row;
+        @include flex-center(row, flex-start, center, 0.5rem);
         padding: 5%;
         height: 15vh;
         width: 22rem;
-        align-items: center;
         border-radius: 15px 15px 70px 0;
-        gap: 0.5rem;
-        box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
+        @include box-shadow();
 
         input {
           width: 20vw;
@@ -54,54 +69,77 @@ body {
 
         button {
           height: 3rem;
-          width: 4.5rem;
-          background-color: $darkPurple;
-          color: $white;
-          border: 0;
+          width: 3.75rem;
           border-radius: 50%;
-          align-items: center;
-          cursor: pointer;
-          display: flex;
-          justify-content: center;
+          @include button-styles();
         }
       }
+
       .List {
         background-color: $white;
         list-style: none;
         padding: 5%;
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
+        width: 22rem;
+        @include flex-center(column, flex-start, flex-start, 1rem);
+        min-height: 5vh;
         border-radius: 0 0 15px 15px;
-        box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
+        @include box-shadow();
 
         li {
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          justify-content: space-between;
-          gap: 1rem;
+          width: 100%;
+          @include flex-center(row, space-between, center, 1rem);
+          overflow-wrap: anywhere;
 
-          p {
-            cursor: pointer;
+          div {
+            @include flex-center(row, center, center, 1rem);
+
+            p {
+              cursor: pointer;
+            }
+
+            button {
+              background-color: transparent;
+              color: $darkPurple;
+              border: 0;
+              cursor: pointer;
+              padding: 2.5%;
+            }
           }
+        }
+      }
+
+      .Alert {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        @include flex-center();
+
+        div {
+          background: white;
+          padding: 1%;
+          border-radius: 15px;
+          @include box-shadow(rgba(0, 0, 0, 0.1), 0, 0, 10px);
+          text-align: center;
+          @include flex-center(column, flex-start, center, 0.5rem);
 
           button {
-            background-color: transparent;
-            color: $darkPurple;
-            border: 0;
-            cursor: pointer;
-            padding: 2.5%;
-            border-radius: 50%;
+            width: 5rem;
+            height: 2.5rem;
+            border-radius: 15px;
+            font-weight: bold;
+
+            @include button-styles();
           }
         }
       }
     }
 
     section {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      @include flex-center(column, center, center);
+      align-self: self-start;
 
       h1 {
         color: $white;
@@ -110,16 +148,15 @@ body {
       }
 
       div {
-        display: flex;
-        flex-direction: row;
-        gap: 1rem;
+        @include flex-center(row, center, center, 1rem);
         background-color: $white;
         width: min-content;
         padding: 2%;
+        @include box-shadow();
         border-radius: 15px;
 
         img {
-          width: 3rem;
+          width: 5rem;
         }
       }
     }
