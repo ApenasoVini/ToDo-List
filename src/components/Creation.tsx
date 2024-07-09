@@ -1,4 +1,4 @@
-import { ChangeEvent, FC, useState, useEffect } from 'react';
+import { ChangeEvent, FC, useState } from 'react';
 import List from './List';
 import { Task } from '../interfaces/Interface';
 import Alert from './Alert';
