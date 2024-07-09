@@ -118,17 +118,21 @@ body {
         div {
           background: white;
           padding: 1%;
+          width: 10vw;
           border-radius: 15px;
           @include box-shadow(rgba(0, 0, 0, 0.1), 0, 0, 10px);
           text-align: center;
           @include flex-center(column, flex-start, center, 0.5rem);
+
+          p {
+            font-weight: bold;
+          }
 
           button {
             width: 5rem;
             height: 2.5rem;
             border-radius: 15px;
             font-weight: bold;
-
             @include button-styles();
           }
         }
