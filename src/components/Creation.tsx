@@ -23,19 +23,19 @@ const Creation: FC = () => {
             setTimeout(() => setAlertVisible(false), 10000);
             return;
         }
-        const newTask = { taskName: task, completed: false };
+        const newTask: Task = { id: Date.now(), taskName: task, completed: false };
         setTodoList([...todoList, newTask]);
         setTask('');
     };
 
-    const deleteTask = (taskNameToDelete: string): void => {
-        setTodoList(todoList.filter((task) => task.taskName !== taskNameToDelete));
+    const deleteTask = (taskIdToDelete: number): void => {
+        setTodoList(todoList.filter((task) => task.id !== taskIdToDelete));
     };
 
-    const toggleCompleteTask = (taskNameToToggle: string): void => {
+    const toggleCompleteTask = (taskIdToToggle: number): void => {
         setTodoList(
             todoList.map((task) =>
-                task.taskName === taskNameToToggle ? { ...task, completed: !task.completed } : task
+                task.id === taskIdToToggle ? { ...task, completed: !task.completed } : task
             )
         );
     };
@@ -64,7 +64,7 @@ const Creation: FC = () => {
                 {todoList.map((task: Task, key: number) => {
                     return (
                         <List
-                            key={key}
+                            key={task.id}
                             task={task}
                             deleteTask={deleteTask}
                             toggleCompleteTask={toggleCompleteTask}

@@ -68,8 +68,6 @@ body {
         }
 
         button {
-          height: 3rem;
-          width: 3.75rem;
           border-radius: 50%;
           @include button-styles();
         }

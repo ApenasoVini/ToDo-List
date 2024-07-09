@@ -1,4 +1,3 @@
-import List from './components/List';
 import Creation from './components/Creation';
 import reactnative from './assets/reactnative.svg';
 import sass from './assets/sass.svg';
